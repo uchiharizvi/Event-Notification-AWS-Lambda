@@ -1,8 +1,10 @@
 package com.hpamp.eventnotificationms.service;
 
+import com.hpamp.eventnotificationms.entity.Event;
+
 public interface EventService {
-    String createEvent() throws Exception;
-    String updateEvent() throws Exception;
-    String retrieveEventDetails() throws Exception;
+    Event createEvent(Event event) throws Exception;
+    String updateEvent(String eventId, Event event) throws Exception;
+    Event retrieveEventDetails(String eventId) throws Exception;
 
 }

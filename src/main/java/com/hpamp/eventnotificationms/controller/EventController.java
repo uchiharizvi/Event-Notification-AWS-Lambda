@@ -1,11 +1,9 @@
 package com.hpamp.eventnotificationms.controller;
 
+import com.hpamp.eventnotificationms.entity.Event;
 import com.hpamp.eventnotificationms.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/events")
@@ -13,8 +11,18 @@ public class EventController {
     @Autowired
     private EventService eventService;
 
-    @PostMapping
-    public String createEvent(@RequestBody String eventRequest) throws Exception {
-        return eventService.createEvent();
+    @PostMapping("/create")
+    public Event createEvent(@RequestBody Event event) throws Exception {
+        return eventService.createEvent(event);
+    }
+
+    @GetMapping("/retrieve/{eventId}")
+    public Event getEvent(@PathVariable String eventId) throws Exception {
+        return eventService.retrieveEventDetails(eventId);
+    }
+
+    @PutMapping("/update/{eventId}")
+    public String updateEvent(@PathVariable String eventId, @RequestBody Event event) throws Exception {
+        return eventService.updateEvent(eventId, event);
     }
 }

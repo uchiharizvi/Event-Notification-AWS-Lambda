@@ -1,2 +1,10 @@
 server:
   port: 8083
+aws:
+  iam:
+    user:
+      access-key: AKIA6LLXGJZAFMT762HR
+      secret-key: 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
+  dynamo:
+    service-endpoint: dynamodb.us-east-1.amazonaws.com
+    signing-region: us-east-1
