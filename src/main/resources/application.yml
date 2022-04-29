@@ -3,8 +3,8 @@ server:
 aws:
   iam:
     user:
-      access-key: AKIA6LLXGJZAFMT762HR
-      secret-key: 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
+      access-key: 
+      secret-key: 
   dynamo:
     service-endpoint: dynamodb.us-east-1.amazonaws.com
     signing-region: us-east-1
